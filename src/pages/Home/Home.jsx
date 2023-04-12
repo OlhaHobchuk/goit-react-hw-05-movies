@@ -8,7 +8,6 @@ import css from './Home.module.css';
 const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     setLoading(true);
@@ -18,10 +17,7 @@ const Home = () => {
 
         setTrendingMovies(normalizedArray);
       })
-      .catch(error => {
-        setError(error.message);
-        onError(error);
-      })
+      .catch(error => onError(error))
       .finally(() => setLoading(false));
   }, []);
 
