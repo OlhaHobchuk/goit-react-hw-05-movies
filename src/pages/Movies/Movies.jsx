@@ -35,11 +35,6 @@ const Movies = () => {
       .finally(() => setLoading(false));
   }, [query]);
 
-  const handleSubmit = search => {
-    setSearchParams({ query: search });
-    setMovies([]);
-  };
-
   const onError = error => {
     Notiflix.Notify.warning(
       'Sorry, there are no movies matching your search query. Please try again.'
@@ -47,7 +42,7 @@ const Movies = () => {
   };
   return (
     <>
-      <SearchForm onSubmit={handleSubmit} setSearchParams={setSearchParams} />
+      <SearchForm setSearchParams={setSearchParams} />
       <SearchResults movies={movies} />
       {loading && <Loader />}
     </>

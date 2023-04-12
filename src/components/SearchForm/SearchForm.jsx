@@ -3,7 +3,7 @@ import Notiflix from 'notiflix';
 import PropTypes from 'prop-types';
 import css from './SearchForm.module.css';
 
-export const SearchForm = ({ onSubmit }) => {
+export const SearchForm = ({ setSearchParams }) => {
   const [keyWord, setKeyWord] = useState('');
 
   const handleSearchChange = event => {
@@ -14,19 +14,19 @@ export const SearchForm = ({ onSubmit }) => {
     event.preventDefault();
     const query = keyWord.trim().toLocaleLowerCase();
     if (query === '') {
+      setSearchParams({});
       Notiflix.Notify.info('Please enter something');
       return;
     }
-
-    onSubmit(query);
-
+    setSearchParams({ query: query });
     setKeyWord('');
   };
 
   return (
     <form className={css.form} onSubmit={handleFormSubmit}>
       <input
-        name="keyWord"
+        name="word"
+        value={keyWord}
         className={css.input}
         type="text"
         autoComplete="off"
@@ -42,5 +42,5 @@ export const SearchForm = ({ onSubmit }) => {
 };
 
 SearchForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
+  setSearchParams: PropTypes.func.isRequired,
 };
