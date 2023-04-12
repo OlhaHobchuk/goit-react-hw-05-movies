@@ -1,0 +1,20 @@
+.additionalContainer {
+  padding-bottom: 20px;
+}
+.backLink {
+  display: inline-block;
+  padding: 4px 8px;
+  margin-left: 15px;
+  border: 1px solid blueviolet;
+  color: blueviolet;
+  border-radius: 6px;
+  font-size: 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.backLink:hover,
+.backLink:focus {
+  background-color: blueviolet;
+  color: white;
+}

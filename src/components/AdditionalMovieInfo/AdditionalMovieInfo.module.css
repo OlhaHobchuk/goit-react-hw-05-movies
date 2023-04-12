@@ -1,0 +1,25 @@
+.linkContainer {
+  border-bottom: 2px solid black;
+  padding-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.additionalMovieInfoTitle {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.additionalMovieInfoList {
+  margin: 0;
+  padding-left: 15px;
+}
+
+.additionalMovieInfoLink {
+  text-decoration: none;
+  color: black;
+}
+.additionalMovieInfoLink:hover,
+.additionalMovieInfoLink:focus {
+  color: blueviolet;
+}

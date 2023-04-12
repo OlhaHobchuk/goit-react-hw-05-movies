@@ -1,0 +1,27 @@
+.searchMovieContainer {
+  margin-top: 20px;
+}
+
+.searchMovieTitle {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.searchMovieList {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.searchMovieLink {
+  font-size: 14px;
+  text-decoration: none;
+  color: black;
+}
+
+.searchMovieLink:hover,
+.searchMovieLink:focus {
+  color: blueviolet;
+}
