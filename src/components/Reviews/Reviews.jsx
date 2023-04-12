@@ -9,7 +9,6 @@ import css from './Reviews.module.css';
 const Reviews = () => {
   const [loading, setLoading] = useState(false);
   const [reviews, setRewiews] = useState([]);
-  const [error, setError] = useState(null);
   const { movieId } = useParams();
 
   useEffect(() => {
@@ -23,10 +22,7 @@ const Reviews = () => {
         }));
         setRewiews(normalizedArray);
       })
-      .catch(error => {
-        setError(error.message);
-        onError(error);
-      })
+      .catch(error => onError(error))
       .finally(() => setLoading(false));
   }, [movieId]);
 
